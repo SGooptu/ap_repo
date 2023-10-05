@@ -25,7 +25,6 @@ class MancalaGame:
             for i in range(6):
                 self.board[i] = 0
                 self.board[i + 7] = 0
-
     def switch_player(self):
         if self.current_player == 0:
             self.current_player = 1
@@ -54,8 +53,7 @@ class MancalaGUI:
             label = tk.Label(self.root, text=label_text, font=("Arial", 10, "bold"), pady=10, padx=10)
             label.grid(row=0, column=i)
 
-            button = tk.Button(self.root, text=str(self.game.board[i]), width=3, height=2, font=("Arial", 14, "bold"),
-                               command=lambda i=i: self.on_pit_click(i), bg="#FFD700" if i in range(7) else "#FF5733", fg="#333333")
+            button = tk.Button(self.root, text=str(self.game.board[i]), width=3, height=2, font=("Arial", 14, "bold"), command=lambda i=i: self.on_pit_click(i), bg="#FFD700" if i in range(7) else "#FF5733", fg="#333333")
             button.grid(row=1, column=i, padx=5, pady=5)
             self.buttons.append(button)
 
